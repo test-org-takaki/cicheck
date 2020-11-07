@@ -27,6 +27,15 @@ test2:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
 
+deploy_sandbox:
+  stage: deploy
+  script:
+    - echo "Deploy to sandbox server"
+  environment:
+    name: sandbox
+    url: https://staging.example.com
+  when: manual
+
 deploy_staging:
   stage: deploy
   script:
@@ -34,7 +43,6 @@ deploy_staging:
   environment:
     name: staging
     url: https://staging.example.com
-  when: manual
   only:
     - master
 
