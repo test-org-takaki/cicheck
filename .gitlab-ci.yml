@@ -18,16 +18,19 @@ build1:
 build2:
   stage: build
   script:
-    - echo "Do your buildl2 here
+    - echo "Do your buildl2 here"
     
 test1:
   stage: test
+  needs: ["build1"]
   script:
     - echo "Do a test here"
     - echo "For example run a test suite"
+    
 
 test2:
   stage: test
+  needs: ["build2"]
   script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
