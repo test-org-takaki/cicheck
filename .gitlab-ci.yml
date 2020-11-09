@@ -13,8 +13,12 @@ stages:
 build1:
   stage: build
   script:
-    - echo "Do your build here"
+    - echo "Do your build1 here"
 
+build2:
+  stage: biuld
+  script:
+    - echo "Do your buildl2 here
 test1:
   stage: test
   script:
