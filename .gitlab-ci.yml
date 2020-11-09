@@ -16,9 +16,10 @@ build1:
     - echo "Do your build1 here"
 
 build2:
-  stage: biuld
+  stage: build
   script:
     - echo "Do your buildl2 here
+    
 test1:
   stage: test
   script:
