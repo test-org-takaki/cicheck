@@ -5,3 +5,5 @@ abcdef
 xyz
 
 hoge fuga
+
+a
