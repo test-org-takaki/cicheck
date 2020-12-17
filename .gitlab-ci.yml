@@ -5,11 +5,16 @@
 image: busybox:latest
 
 stages:
+  - check_condition
   - build
   - test
   - manual
   - deploy
   
+check_conditoin:
+  stage: check_condition
+  except:
+    - external_pull_requests
 
 build1:
   stage: build
