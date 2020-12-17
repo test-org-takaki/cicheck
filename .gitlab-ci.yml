@@ -7,28 +7,44 @@ image: busybox:latest
 stages:
   - build
   - test
+  - manual
   - deploy
   
-
 build1:
   stage: build
+  except:
+    - external_pull_requests
   script:
     - echo "Do your build here"
 
 test1:
   stage: test
+  except:
+    - external_pull_requests
   script:
     - echo "Do a test here"
     - echo "For example run a test suite"
 
 test2:
   stage: test
+  except:
+    - external_pull_requests
   script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
 
+manual_check:
+  stage: manual
+  when: manual
+  except:
+    - external_pull_requests
+  script:
+    - echo "Manual Check"
+
 deploy_sandbox:
   stage: deploy
+  except:
+    - external_pull_requests
   script:
     - echo "Deploy to sandbox server"
   environment:
@@ -38,6 +54,8 @@ deploy_sandbox:
 
 deploy_staging:
   stage: deploy
+  except:
+    - external_pull_requests
   script:
     - echo "Deploy to staging server"
   environment:
@@ -48,6 +66,8 @@ deploy_staging:
 
 deploy_prod:
   stage: deploy
+  except:
+    - external_pull_requests
   script:
     - echo "Deploy to production server"
   environment:
