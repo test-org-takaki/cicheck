@@ -7,6 +7,7 @@ image: busybox:latest
 stages:
   - build
   - test
+  - manual
   - deploy
   
 
@@ -26,6 +27,12 @@ test2:
   script:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
+
+manual-check:
+  stage: manual
+  when: manual
+    script:
+    - echo "Manual Check"
 
 deploy_sandbox:
   stage: deploy
