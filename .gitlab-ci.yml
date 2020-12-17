@@ -28,7 +28,7 @@ test2:
     - echo "Do another parallel test here"
     - echo "For example run a lint test"
 
-manual-check:
+manual_check:
   stage: manual
   when: manual
     script:
