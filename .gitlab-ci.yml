@@ -13,7 +13,7 @@ stages:
   
 check_conditoin:
   stage: check
-  stript:
+  script:
     - echo "except pr"
   except:
     - external_pull_requests
