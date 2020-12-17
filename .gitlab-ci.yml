@@ -15,6 +15,7 @@ check_conditoin:
   stage: check
   script:
     - echo "except pr"
+    - false
   except:
     - external_pull_requests
 
