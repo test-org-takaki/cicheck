@@ -31,7 +31,7 @@ test2:
 manual_check:
   stage: manual
   when: manual
-    script:
+  script:
     - echo "Manual Check"
 
 deploy_sandbox:
